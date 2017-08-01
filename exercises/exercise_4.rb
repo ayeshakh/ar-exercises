@@ -6,8 +6,6 @@ require_relative './exercise_3'
 puts "Exercise 4"
 puts "----------"
 
-class Store < ActiveRecord::Base
-end
 
 Store.create(
   name: "Surrey",

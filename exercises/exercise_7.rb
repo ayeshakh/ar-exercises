@@ -34,12 +34,15 @@ end
 
 
 puts "Enter a store name"
-@store_name = gets.chomp
+input = gets.chomp
 
-store = Store.create(
-    name: "#{@store_name}"
+@store = Store.create(
+    name: input
 )
 
-p "Store name is :", store.errors[:name]
-p "Annual_revenue:", store.errors[:annual_revenue]
-p "Mens and Womens Apparel:", store.errors[:apparel]
+@store.valid?
+@store.errors.messages.each {|message| p message}
+
+
+
+
